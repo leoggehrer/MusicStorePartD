@@ -1,7 +1,16 @@
-﻿namespace MusicStore.Contracts.Persistence
+//@CodeCopy
+//MdStart
+namespace MusicStore.Contracts.Persistence
 {
-	public interface IGenre : IIdentifiable
+    /// <summary>
+    /// Defines all properties of a genre.
+    /// </summary>
+	public interface IGenre : IIdentifiable, ICopyable<IGenre>
     {
+        /// <summary>
+        /// Gets or sets the name of this instance.
+        /// </summary>
         string Name { get; set; }
     }
 }
+//MdEnd

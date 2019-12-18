@@ -1,13 +1,14 @@
-﻿using System;
+//@CodeCopy
+//MdStart
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
 namespace MusicStore.WebApi.Controllers
 {
-	public abstract class GenericController<I, M> : ControllerBase
+	public abstract partial class GenericController<I, M> : ControllerBase
         where M : Transfer.Models.TransferObject, I, Contracts.ICopyable<I>, new()
         where I : Contracts.IIdentifiable
     {
@@ -63,44 +64,6 @@ namespace MusicStore.WebApi.Controllers
             ctrl.SaveChanges();
         }
 		#endregion Sync-Methods
-
-		#region Async-Methods
-		public async Task<int> CountAsnc()
-		{
-			using var ctrl = CreateController();
-
-			return await ctrl.CountAsync();
-		}
-		public async Task<IEnumerable<I>> GetAllAsync()
-		{
-			using var ctrl = CreateController();
-
-			return await ctrl.GetAllAsync();
-		}
-		public async Task<I> GetByIdAsync(int id)
-		{
-			using var ctrl = CreateController();
-
-			return await ctrl.GetByIdAsync(id);
-		}
-		public async Task InsertAsync([FromBody] M model)
-		{
-			using var ctrl = CreateController();
-			await ctrl.InsertAsync(model);
-			await ctrl.SaveChangesAsync();
-		}
-		public async Task UpdateAsync(int id, [FromBody] M model)
-		{
-			using var ctrl = CreateController();
-			await ctrl.UpdateAsync(model);
-			await ctrl.SaveChangesAsync();
-		}
-		public async Task DeleteByIdAsync(int id)
-		{
-			using var ctrl = CreateController();
-			await ctrl.DeleteAsync(id);
-			await ctrl.SaveChangesAsync();
-		}
-		#endregion Async-Methods
 	}
 }
+//MdEnd

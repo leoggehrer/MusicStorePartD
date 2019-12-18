@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿//@BaseCode
+//MdStart
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MusicStore.Contracts.Client
@@ -16,3 +18,4 @@ namespace MusicStore.Contracts.Client
         #endregion Async-Methods
     }
 }
+//MdEnd

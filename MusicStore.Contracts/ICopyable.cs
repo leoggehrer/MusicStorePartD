@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+//@CodeCopy
+//MdStart
 namespace MusicStore.Contracts
 {
-	public interface ICopyable<T>
+	/// <summary>
+	/// Defines a generalized copying method for all properties defined by the Type T.
+	/// </summary>
+	/// <typeparam name="T">The type of object to copy.</typeparam>
+	public partial interface ICopyable<T>
 	{
 		void CopyProperties(T other);
 	}
 }
+//MdEnd

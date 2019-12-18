@@ -1,4 +1,6 @@
-﻿using System;
+﻿//@BaseCode
+//MdStart
+using System;
 using System.Collections.Generic;
 
 namespace MusicStore.Contracts.Client
@@ -16,3 +18,4 @@ namespace MusicStore.Contracts.Client
         #endregion Sync-Methods
     }
 }
+//MdEnd
